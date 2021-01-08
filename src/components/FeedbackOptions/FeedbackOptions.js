@@ -6,27 +6,15 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
 
   return (
     <div className={s.buttons}>
-      <button
-        type="button"
-        className={s.button}
-        onClick={() => onLeaveFeedback(key[0])}
-      >
-        Good
-      </button>
-      <button
-        type="button"
-        className={s.button}
-        onClick={() => onLeaveFeedback(key[1])}
-      >
-        Neutral
-      </button>
-      <button
-        type="button"
-        className={s.button}
-        onClick={() => onLeaveFeedback(key[2])}
-      >
-        Bad
-      </button>
+      {key.map(e => (
+        <button
+          type="button"
+          className={s.button}
+          onClick={() => onLeaveFeedback(e)}
+        >
+          {e.charAt(0).toUpperCase() + e.slice(1)}
+        </button>
+      ))}
     </div>
   );
 };
