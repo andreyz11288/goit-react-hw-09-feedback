@@ -8,6 +8,7 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
     <div className={s.buttons}>
       {key.map(e => (
         <button
+          key={e}
           type="button"
           className={s.button}
           onClick={() => onLeaveFeedback(e)}
